@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="eyebrow">Panel admin</p>
+
+<form method="post" class="admin-new-table">
+  <input type="text" name="name" placeholder="Nombre (ej. Mesa 1)" required>
+  <input type="text" name="topic" placeholder="Tema" required>
+  <button type="submit" class="btn btn-primary">Nueva mesa</button>
+</form>
+
+<table class="admin-table">
+  <tr>
+    <th>Mesa</th><th>Tema</th><th>Código</th><th>Estado</th><th></th>
+  </tr>
+  {% for table in tables %}
+  <tr>
+    <td>{{ table.name }}</td>
+    <td>{{ table.topic }}</td>
+    <td><code>{{ table.passcode }}</code></td>
+    <td>{{ "Cerrada" if table.locked else "Abierta" }}</td>
+    <td>
+      <form method="post" action="{{ url_for('admin_lock', table_id=table.id) }}" style="display:inline">
+        <button type="submit" class="btn btn-outline">{{ "Abrir" if table.locked else "Cerrar" }}</button>
+      </form>
+      <form method="post" action="{{ url_for('admin_delete', table_id=table.id) }}" style="display:inline" onsubmit="return confirm('¿Eliminar esta mesa?');">
+        <button type="submit" class="btn btn-outline">Eliminar</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+<a class="btn btn-secondary" href="{{ url_for('admin_salir') }}">Cerrar sesión</a>
+{% endblock %}
