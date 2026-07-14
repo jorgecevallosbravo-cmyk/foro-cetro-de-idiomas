@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mesa-header">
+  <div class="mesa-header-name">{{ table.name }}</div>
+  <div class="mesa-header-topic">{{ table.topic }}</div>
+</div>
+
+{% if resolution %}
+  <p class="section-label problemas">Problemáticas</p>
+  {% for item in resolution.problemas|lines_to_list %}
+    <div class="pill pill-coral">{{ item }}</div>
+  {% endfor %}
+
+  <p class="section-label propuestas">Propuestas</p>
+  {% for item in resolution.propuestas|lines_to_list %}
+    <div class="pill pill-purple">{{ item }}</div>
+  {% endfor %}
+
+  <p class="section-label accion">Acción prioritaria</p>
+  <div class="pill pill-accion">{{ resolution.accion_prioritaria }}</div>
+{% else %}
+  <p class="muted">Esta mesa aún no ha registrado su resolución.</p>
+{% endif %}
+
+<form method="post" action="{{ url_for('publico_apoyar', table_id=table.id) }}" class="apoyo-row">
+  <button type="submit" class="btn btn-outline">Apoyar</button>
+  <span class="muted">{{ table.apoyos }} apoyos</span>
+</form>
+
+<a class="btn btn-secondary" href="{{ url_for('publico_list') }}">Volver a mesas</a>
+{% endblock %}
