@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mesa-header">
+  <div class="mesa-header-name">{{ table.name }}</div>
+  <div class="mesa-header-topic">{{ table.topic }}</div>
+</div>
+
+{% if table.locked %}
+  <p class="muted">Esta mesa fue cerrada por el/la organizador(a). Ya no se puede editar.</p>
+{% endif %}
+
+<form method="post">
+  <label>Problemáticas (una por línea, máximo 3)</label>
+  <textarea name="problemas" rows="3" {% if table.locked %}readonly{% endif %}>{{ resolution.problemas if resolution else '' }}</textarea>
+
+  <label>Propuestas (una por línea, máximo 3)</label>
+  <textarea name="propuestas" rows="3" {% if table.locked %}readonly{% endif %}>{{ resolution.propuestas if resolution else '' }}</textarea>
+
+  <label>Acción prioritaria</label>
+  <textarea name="accion_prioritaria" rows="2" {% if table.locked %}readonly{% endif %}>{{ resolution.accion_prioritaria if resolution else '' }}</textarea>
+
+  {% if not table.locked %}
+    <button type="submit" class="btn btn-primary">Guardar resolución</button>
+  {% endif %}
+</form>
+<a class="btn btn-secondary" href="{{ url_for('mesa_salir') }}">Salir</a>
+{% endblock %}
