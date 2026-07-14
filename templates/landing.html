@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card center">
+  <p class="eyebrow">Foro Académico ESPAM MFL</p>
+  <h1>¿Eres del público o de una mesa?</h1>
+  <a class="btn btn-primary" href="{{ url_for('publico_list') }}">Soy público</a>
+  <a class="btn btn-secondary" href="{{ url_for('mesa_login') }}">Soy de una mesa</a>
+</div>
+{% endblock %}
