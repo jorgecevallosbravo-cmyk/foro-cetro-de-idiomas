@@ -31,9 +31,10 @@ body {
 }
 
 .brand-logo {
+  display: block;
   max-width: 220px;
   height: auto;
-  margin-bottom: 20px;
+  margin: 0 auto 36px;
 }
 .eyebrow {
   font-size: 13px;
