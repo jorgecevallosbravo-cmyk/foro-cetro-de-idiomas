@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="card center">
+  <img src="{{ url_for('static', filename='logo.png') }}" alt="ESPAM MFL" class="brand-logo">
   <p class="eyebrow">Foro Académico ESPAM MFL</p>
   <h1>¿Eres del público o de una mesa?</h1>
   <a class="btn btn-primary" href="{{ url_for('publico_list') }}">Soy público</a>
