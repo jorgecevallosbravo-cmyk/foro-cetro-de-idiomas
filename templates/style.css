@@ -30,6 +30,11 @@ body {
   padding: 40px 16px;
 }
 
+.brand-logo {
+  max-width: 220px;
+  height: auto;
+  margin-bottom: 20px;
+}
 .eyebrow {
   font-size: 13px;
   color: var(--text-secondary, #666);
