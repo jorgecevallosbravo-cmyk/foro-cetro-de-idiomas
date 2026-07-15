@@ -10,10 +10,10 @@
 {% endif %}
 
 <form method="post">
-  <label>Problemáticas (una por línea, máximo 3)</label>
+  <label>Problemáticas (una por línea, máximo 10)</label>
   <textarea name="problemas" rows="3" {% if table.locked %}readonly{% endif %}>{{ resolution.problemas if resolution else '' }}</textarea>
 
-  <label>Propuestas (una por línea, máximo 3)</label>
+  <label>Propuestas (una por línea, máximo 10)</label>
   <textarea name="propuestas" rows="3" {% if table.locked %}readonly{% endif %}>{{ resolution.propuestas if resolution else '' }}</textarea>
 
   <label>Acción prioritaria</label>
