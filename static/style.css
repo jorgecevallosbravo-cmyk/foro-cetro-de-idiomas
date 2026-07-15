@@ -1,0 +1,112 @@
+:root {
+  --teal: #005846;
+  --teal-dark: #023D30;
+  --navy: #1B1A4B;
+  --green-accent: #3ED482;
+  --coral-bg: #FAECE7;
+  --coral-text: #712B13;
+  --purple-bg: #EEEDFE;
+  --purple-text: #3C3489;
+  --green-bg: #EAF3DE;
+  --green-text: #173404;
+  --grey-text: #3A3A3A;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--grey-text);
+  background: #F4F8F6;
+  margin: 0;
+}
+
+.app-shell {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+.card.center {
+  text-align: center;
+  padding: 40px 16px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  color: var(--text-secondary, #666);
+  margin-bottom: 4px;
+}
+
+h1 {
+  font-size: 20px;
+  color: var(--teal-dark);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary { background: var(--teal); color: #fff; }
+.btn-secondary { background: #fff; color: var(--grey-text); border: 1px solid #ccc; }
+.btn-outline { background: #fff; color: var(--teal); border: 1px solid var(--teal); }
+
+.table-card {
+  display: block;
+  border-left: 4px solid var(--teal);
+  background: #E1F5EE;
+  border-radius: 0 10px 10px 0;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: var(--teal-dark);
+}
+
+.table-card-name { font-weight: bold; }
+
+.mesa-header {
+  background: var(--teal);
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.section-label { font-size: 12px; font-weight: bold; margin: 12px 0 6px; }
+.section-label.problemas { color: var(--coral-text); }
+.section-label.propuestas { color: var(--purple-text); }
+.section-label.accion { color: var(--green-text); }
+
+.pill { border-radius: 8px; padding: 10px 12px; font-size: 13px; margin-bottom: 8px; }
+.pill-coral { background: var(--coral-bg); color: var(--coral-text); }
+.pill-purple { background: var(--purple-bg); color: var(--purple-text); }
+.pill-accion { background: var(--green-bg); color: var(--green-text); font-weight: bold; }
+
+.apoyo-row { display: flex; align-items: center; gap: 12px; margin: 16px 0; }
+
+form label { display: block; font-size: 13px; margin: 10px 0 4px; }
+form input, form select, form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.flash { background: #FAC775; padding: 8px 12px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; }
+
+.admin-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+.admin-table th, .admin-table td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #ddd; }
+.admin-new-table { display: flex; gap: 8px; margin-bottom: 16px; }
+.admin-new-table input { margin-bottom: 0; }
+.muted { color: #888; font-size: 13px; }
